@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Images/play_pause.png</file>
+        <file>PlayPauseButton.qml</file>
+        <file>ProgressSlider.qml</file>
+    </qresource>
+</RCC>
