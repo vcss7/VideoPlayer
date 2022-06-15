@@ -49,10 +49,18 @@ Window {
             id: video_button
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
-            width: 100 //Screen.width
-            height: 60 //Screen.height
+            width: video_button_text.width + 15
+            height: video_button_text.height + 15
             color: "white"
             radius: 10
+
+            Text {
+                id: video_button_text
+                text: qsTr("Open Video..")
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
+                font.pointSize: 18
+            }
 
             TapHandler {
                 onTapped: {

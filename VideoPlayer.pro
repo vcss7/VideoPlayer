@@ -6,8 +6,7 @@ QT += quick
 
 SOURCES += \
         apiwrapper.mm \
-        main.cpp \
-        apiwrapper.mm
+        main.cpp
 
 RESOURCES += qml.qrc
 

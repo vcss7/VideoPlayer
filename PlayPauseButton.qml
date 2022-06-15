@@ -2,8 +2,8 @@ import QtQuick 2.0
 
 Rectangle {
     id: root
-    width: 40
-    height: 40
+    width: 45
+    height: 45
     radius: 20
     color: "white"
 
