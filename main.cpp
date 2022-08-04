@@ -9,6 +9,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
     QGuiApplication app(argc, argv);
+    // register custom qml type
     qmlRegisterType<ApiWrapper>("ApiWrapper", 1, 0, "ApiWrapper");
 
     QQmlApplicationEngine engine;

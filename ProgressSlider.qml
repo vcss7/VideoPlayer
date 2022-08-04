@@ -1,13 +1,17 @@
 import QtQuick 2.0
 
 Rectangle {
+    // a qml type to use as a progress slider for a video
     id: sliderContainer
 
     property color sliderColor: "#2676f1"
-    property int currentValue
-    property int maxValue
+    property int currentValue   // of video
+    property int maxValue       // of video
+    // max width for containing slider
     readonly property int maxSliderPosition: sliderContainer.width - slider.width
+    // calculate current slider position in relation to the video playing
     readonly property int currentSliderPosition: sliderContainer.maxSliderPosition * sliderContainer.currentValue / sliderContainer.maxValue
+    // calculate playback position of video based on the slider position (used with drag event)
     property int newCurrentValue: slider.x * sliderContainer.maxValue / sliderContainer.maxSliderPosition
 
     signal dragStarted()

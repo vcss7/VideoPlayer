@@ -26,6 +26,7 @@ Window {
 
         states: [
             State {
+                // state for prompting user
                 name: "promptingVideo"
                 when: video_player.playbackState == MediaPlayer.StoppedState
                 PropertyChanges { target: root_rectangle; color: "#2676f1" }
@@ -35,6 +36,7 @@ Window {
                 StateChangeScript { script: api_wrapper.setTimerEnabled() }
             },
             State {
+                // state while playing a video
                 name: "playingVideo"
                 when: video_player.playbackState != MediaPlayer.StoppedState
                 PropertyChanges { target: root_rectangle; color: "black" }
@@ -105,6 +107,7 @@ Window {
             maxValue: video_player.duration
 
             onDragStarted: { video_player.pause() }
+            // set new playback position based on new slider position
             onDragReleased: { video_player.setPosition(progress_slider_control.newCurrentValue) }
         }
 
@@ -116,6 +119,7 @@ Window {
 
             TapHandler {
                 onTapped: {
+                    // flip between video playback state between play/pause on tapped event
                     video_player.playbackState == MediaPlayer.PausedState ? video_player.play() : video_player.pause()
                 }
             }
